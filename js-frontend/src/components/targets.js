@@ -9,7 +9,8 @@ class Targets {
         this.adapter
             .getTargets()
             .then(targets => {
-                targets.forEach(target => this.targets.push(target))
+                console.log(targets)
+                //targets.forEach(target => this.targets.push(target))
         })
         .then(() => {
             this.render()
@@ -18,6 +19,6 @@ class Targets {
 
     render() {
         const targetsContainer = document.getElementById('targets-container')
-        targetsContainer.innerHTML = ''
+        targetsContainer.innerHTML = 'test'
     }
 }
