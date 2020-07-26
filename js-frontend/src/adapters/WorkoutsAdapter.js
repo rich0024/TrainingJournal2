@@ -8,3 +8,4 @@ class WorkoutsAdapter {
         )
     }
 }
+console.log('test workouts adapter')

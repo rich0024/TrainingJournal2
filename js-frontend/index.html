@@ -15,23 +15,30 @@
     <p>"add" button to the right of the workout.</p>
 
      <h1>Training Journal</h1>
-    <div class="container">
+    <div id="container">
 
     </div>
-    <div class="targets-container">
+    <select id="target-select">
+            <option selected="selected">Select a target to see all workouts</option>
+    </select>
+    <form id="new-target-form">
+        <p>Don't see what you're looking for? Add it here:</p>
+        <input type="string" name="target-name" id="new-target">
+        <input type="submit" value="create target">
+    </form>
 
-    </div>
-
-    <div class="workouts-container">
-
+    <p> </p>
+    <p> </p>
+    <p>Workout list:</p>
+    <div id="workouts-container">
+        Please select a target
     </div>    
-
+    <script src="src/adapters/TargetsAdapter.js"></script>
+    <script src="src/adapters/WorkoutsAdapter.js"></script>
     <script src="src/components/targets.js"></script>
     <script src="src/components/target.js"></script>
     <script src="src/components/workouts.js"></script>
     <script src="src/components/workout.js"></script>    
-    <script src="src/adapters/TargetsAdapter.js"></script>
-    <script src="src/adapters/WorkoutsAdapter.js"></script>
     <script src="src/components/app.js"></script>
     <script src="src/index.js"></script>
 </body>
