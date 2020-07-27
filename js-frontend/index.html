@@ -21,6 +21,7 @@
     <select id="target-select">
             <option selected="selected">Select a target to see all workouts</option>
     </select>
+    <p></p>
     <form id="new-target-form">
         <p>Don't see what you're looking for? Add it here:</p>
         <input type="string" name="target-name" id="new-target">
@@ -33,6 +34,13 @@
     <div id="workouts-container">
         Please select a target
     </div>    
+    <form id="new-workout-form">
+        <p>Don't see what you're looking for? Add it here:</p>
+        <input type="string" name="workout-name" id="new-workout-name">
+        <input type="text" details="workoutt-details" id="new-workout-details">
+        <input type="hidden" id="target-id" value="" />
+        <input type="submit" value="create workout">
+    </form>
     <script src="src/adapters/TargetsAdapter.js"></script>
     <script src="src/adapters/WorkoutsAdapter.js"></script>
     <script src="src/components/targets.js"></script>

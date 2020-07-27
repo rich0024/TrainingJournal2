@@ -1,7 +1,9 @@
 class Targets {
     constructor() {
         this.targets = []
+        this.workouts = []
         this.adapter = new TargetsAdapter()
+        this.workoutsAdapter = new WorkoutsAdapter()
         this.initiBindingsAndEventListeners()
         this.fetchAndLoadTargets()
     }
@@ -10,6 +12,8 @@ class Targets {
         this.targetsDrop = document.getElementById('target-select')
         this.newTarget = document.getElementById('new-target')
         this.targetForm = document.getElementById('new-target-form')
+        this.newWorkoutForm = document.getElementById('new-workout-form')
+        this.newWorkoutForm.addEventListener("submit", this.createWorkout.bind(this))
         this.targetForm.addEventListener('submit', this.createTarget.bind(this))
         this.targetsDrop.addEventListener('change', this.getWorkouts.bind(this))
     }
@@ -42,9 +46,32 @@ class Targets {
 
     getWorkouts(e) {
         let input = this.targetsDrop.value
+        let input2 = document.querySelector('#target-id')
+
+        input2.value = this.targetsDrop.value
         
         new Workouts(input)
-        console.log(`${input}`)
+        console.log(`input2${input2.value}`)
+        this.newWorkoutForm.style.visibility = "visible"
+    }
+
+    createWorkout(e) {
+        e.preventDefault()
+        const value = {
+            name: e.target[0].value,
+            details: e.target[1].value,
+            target_id: e.target[2].value
+        }
+        this.workoutsAdapter.createWorkout(value).then(workout => {
+            this.workouts.push(new Workout(workout))
+            console.log(`value${value.target_id}`)
+            e.target[0].value = ''
+            e.target[1].value = ''
+            this.getWorkouts(value.target_id)
+        })
+        console.log(`${e.target[0].value}`)
+        console.log(`${e.target[1].value}`)
+        console.log(`${e.target[2].value}`)
     }
 }
 console.log('test targets')

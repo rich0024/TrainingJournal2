@@ -2,3 +2,7 @@ body {
     background-color: lightblue;
     opacity: 1;
   }
+
+#new-workout-form {
+    visibility: hidden;
+  }
