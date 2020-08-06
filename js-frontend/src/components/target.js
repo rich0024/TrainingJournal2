@@ -4,4 +4,3 @@ class Target {
       this.name = targetJSON.name
     }
 }
-console.log('test target')

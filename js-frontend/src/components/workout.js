@@ -6,4 +6,3 @@ class Workout {
       this.target_id = workoutJSON.target_id
     }
 }
-console.log('test workout')

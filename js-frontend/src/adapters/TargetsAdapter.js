@@ -23,4 +23,3 @@ class TargetsAdapter {
         .then(response => response.json())
     }
 }
-console.log('test target adapter')

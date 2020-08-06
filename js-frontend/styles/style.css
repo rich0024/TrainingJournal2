@@ -3,6 +3,14 @@ body {
     opacity: 1;
   }
 
+body {
+  text-align: center
+}
+
+#container {
+  align-items: center
+}
+
 #new-workout-form {
     visibility: hidden;
   }

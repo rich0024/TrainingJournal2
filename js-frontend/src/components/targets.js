@@ -25,6 +25,7 @@ class Targets {
         this.adapter.createTarget(value).then(target => {
             this.targets.push(new Target(target))
             this.newTarget.value = ''
+            this.targetsDrop.innerHTML = '<option selected="selected">Select a target to see all associated workouts</option>'
             this.render()
         })
     }
@@ -46,12 +47,7 @@ class Targets {
 
     getWorkouts(e) {
         let input = this.targetsDrop.value
-        let input2 = document.querySelector('#target-id')
-
-        input2.value = this.targetsDrop.value
-        
         new Workouts(input)
-        console.log(`input2${input2.value}`)
         this.newWorkoutForm.style.visibility = "visible"
     }
 
@@ -64,14 +60,9 @@ class Targets {
         }
         this.workoutsAdapter.createWorkout(value).then(workout => {
             this.workouts.push(new Workout(workout))
-            console.log(`value${value.target_id}`)
             e.target[0].value = ''
             e.target[1].value = ''
             this.getWorkouts(value.target_id)
         })
-        console.log(`${e.target[0].value}`)
-        console.log(`${e.target[1].value}`)
-        console.log(`${e.target[2].value}`)
     }
 }
-console.log('test targets')

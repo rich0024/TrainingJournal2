@@ -31,4 +31,3 @@ class WorkoutsAdapter {
             }).then(response => response.json())
         }
     }
-console.log('test workouts adapter')
